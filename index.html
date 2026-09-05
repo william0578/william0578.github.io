@@ -10,44 +10,58 @@
         }
 
         body {
-            margin: 20px;
+            margin: 20px auto;
+            padding: 0 20px;
+            max-width: 1200px;
+
             font-family: monospace, Arial, Helvetica, sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+
             background: #111;
             color: white;
-            font-size: 150%;
-            
         }
 
         ::selection {
-        background: hsla(321, 100%, 70%, 0.5);
-        color: white;
+            background: hsla(321, 100%, 70%, 0.5);
+            color: white;
         }
 
+        a {
+            color: hsl(0, 5%, 85%);
+            transition: color 0.15s ease;
+        }
 
         a:hover {
-            color: hsl(197, 12%, 57%);
-        }
-
-        .end {
-            font-size: 50%;
-            color:darkgray;
-            text-align: center;
+            color: hsl(321, 100%, 70%);
+            text-shadow: 0 0 8px hsla(321, 100%, 70%, 0.4);
         }
 
         .mainTitle {
             text-align: center;
         }
 
-        /* FTA SECTION */
-
-        #ftaTracker a:link, a:visited {
-            color: hsl(0, 5%, 85%);
-        }
-
-        #ftaDesc {
+        .description {
             text-align: center;
         }
 
+        .end {
+            font-size: 50%;
+            color: darkgray;
+            text-align: center;
+            user-select: none;
+        }
+
+        .end p::after {
+            content: " █";
+            color: #777;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
 
     </style>
 </head>
@@ -57,7 +71,7 @@
     </header>
     <main>
         <div id="ftaTracker">
-            <p id="ftaDesc">
+            <p class="description">
                 <a target="_blank" href="https://william0578.github.io/FTAhealth/">fta status tracker</a> &lt;-- clickable link<br>
                 made to track status of AI models on fta when the website was down. it is now useless the site is back up.<br>
                 possible use IF the site goes back down at any point in the future
