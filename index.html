@@ -3,82 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="william0578 github projects" content="a website that acts as the directory for william0578 subdomains">
-    <title>projects?</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 20px auto;
-            padding: 0 20px;
-            max-width: 1200px;
+    <meta name="description" content="A directory of william0578's subdomains and projects.">
 
-            font-family: monospace, Arial, Helvetica, sans-serif;
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
+    <title>william0578 | subdomains</title>
 
-            background: #111;
-            color: white;
-        }
-
-        ::selection {
-            background: hsla(321, 100%, 70%, 0.5);
-            color: white;
-        }
-
-        a {
-            color: hsl(0, 5%, 85%);
-            transition: color 0.15s ease;
-        }
-
-        a:hover {
-            color: hsl(321, 100%, 70%);
-            text-shadow: 0 0 8px hsla(321, 100%, 70%, 0.4);
-        }
-
-        .mainTitle {
-            text-align: center;
-        }
-
-        .description {
-            text-align: center;
-        }
-
-        .end {
-            font-size: 50%;
-            color: darkgray;
-            text-align: center;
-            user-select: none;
-        }
-
-        .end p::after {
-            content: " █";
-            color: #777;
-            animation: blink 1s steps(1) infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <header>
-        <h1 class="mainTitle">subdomains of <a target="_blank" href="https://william0578.github.io/">william0578.github.io</a></h1>
+        <h1 class="mainTitle">
+            subdomains of
+            <a
+                href="https://william0578.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >the website</a>
+        </h1>
     </header>
+
     <main>
-        <div id="ftaTracker">
-            <p class="description">
-                <a target="_blank" href="https://william0578.github.io/FTAhealth/">fta status tracker</a><br>
-                made to track status of AI models on fta when the website was down. it is now useless the site is back up.<br>
-                possible use IF the site goes back down at any point in the future
+        <p class="description">
+            various projects and subdomains
+        </p>
+
+        <article class="project">
+            <h2>
+                <a
+                    href="https://william0578.github.io/FTAhealth/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >fta status tracker</a>
+            </h2>
+
+            <p>
+                Made to track the status of AI models on FTA when the website
+                was down. It is now mostly useless since the site is back up.
             </p>
-        </div>
+
+            <p>
+                It could be useful again if the site goes down in the future.
+            </p>
+        </article>
     </main>
+
     <footer class="end">
         <p>that's all</p>
     </footer>
