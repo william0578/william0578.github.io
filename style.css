@@ -1,5 +1,5 @@
 :root {
-    --accent-hue: 249;
+    --accent-hue: 260;
 
     --accent: hsl(var(--accent-hue), 100%, 70%);
     --background: #111;
@@ -39,8 +39,11 @@ body {
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     line-height: 1.5;
 
-    background: var(--background);
+    background-color: #130f40;
+    background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+
     color: var(--text);
+
 }
 
 section + section {
@@ -68,20 +71,49 @@ a:hover {
     text-shadow: var(--link-glow);
 }
 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 .mainTitle,
 .description {
     text-align: center;
 }
 
 .project {
+    position: relative;
     margin: 2rem 0;
     padding: 1rem;
-    border-left: 2px solid var(--border);
-    transition: border-color 0.15s ease;
 }
 
-.project:hover {
-    border-color: var(--accent);
+.project::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent),
+        transparent
+    );
+
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+.project:hover::before {
+    opacity: 1;
 }
 
 .project h3 {
